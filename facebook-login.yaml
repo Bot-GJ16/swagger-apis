@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Facebook Clone API
+  version: 1.0.0
+  description: Fake Facebook login endpoint for testing automation and PoC purposes
+
+paths:
+  /facebook/login:
+    post:
+      summary: Facebook-style Login
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Invalid email or password
+
+components:
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          example: user@facebook.com
+        password:
+          type: string
+          example: Pass@123
+    LoginResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Login successful
+        session_id:
+          type: string
+          example: fb_session_99asd8a7sd
+
+servers:
+  - url: https://api.fakefacebook.io
