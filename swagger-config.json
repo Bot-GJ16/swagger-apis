@@ -5,8 +5,8 @@
       "name": "Facebook Login API"
     },
     {
-      "url": "https://raw.githubusercontent.com/Bot-GJ16/swagger-apis/refs/heads/main/xss-demo.yaml",
-      "name": "XSS Demo API"
+      "url": "https://raw.githubusercontent.com/Bot-GJ16/swagger-apis/refs/heads/main/facebook-login.yaml",
+      "name": "Facebook Login API"
     }
   ]
 }
